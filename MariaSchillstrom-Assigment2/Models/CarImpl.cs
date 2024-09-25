@@ -1,62 +1,50 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MariaSchillstrom_Assigment2.Interfaces;
-using MariaSchillstrom_Assignment_2.InterFaces;
-
-
+﻿using MariaSchillstrom_Assignment_2.InterFaces;
+using System;
 
 namespace MariaSchillstrom_Assignment_2.Models
 {
     public class CarImpl : ICar
     {
-        public string Brand { get; set; }
-        public string Model { get; set; }
+        public string Brand { get; set; } = string.Empty;
+        public string Model { get; set; } = string.Empty;
         public int Year { get; set; }
+
+        // Mileage kommer från IVehicle
         public double Mileage { get; set; }
-        public string EngineType { get; set; }
-        public int Doors { get; set; }
-        public double mileage { get; set; }
 
-        private bool engineOn = false;
+        // Implementera Doors från ICar
+        private int doors;
 
-        public class Car
+        public int Doors
         {
-            private int doors;
-
-            public int Doors
+            get => doors;
+            set
             {
-                get => doors;
-                set
+                if (value >= 2 && value <= 5)
                 {
-                    
-                    if (value >= 2 && value <= 5)
-                    {
-                        doors = value;  
-                    }
-                    else
-                    {
-                        Console.WriteLine("Antalet dörrar måste vara mellan 2 och 5.");
-                    }
+                    doors = value;
+                }
+                else
+                {
+                    Console.WriteLine("Antalet dörrar måste vara mellan 2 och 5.");
                 }
             }
         }
 
+        private bool engineOn = false;
 
-
-        public CarImpl(string brand, string model, int year, double mileage, string engineType, int doors)
+        public CarImpl(string brand, string model, int year, double mileage, int doors)
         {
             Brand = brand;
             Model = model;
             Year = year;
             Mileage = mileage;
-            EngineType = engineType;
-            Doors = doors;
+            Doors = doors;  // Sätt Doors från ICar
         }
 
-        
+        public CarImpl() { }
+
+        // Implementera metoder från IDrivable
         public bool IsEngineOn()
         {
             return engineOn;
@@ -94,7 +82,6 @@ namespace MariaSchillstrom_Assignment_2.Models
             }
         }
 
-        
         public override string ToString()
         {
             return $"{Brand} {Model} {Year}";
