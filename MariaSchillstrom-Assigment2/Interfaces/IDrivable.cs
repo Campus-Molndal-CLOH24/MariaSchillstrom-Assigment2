@@ -8,5 +8,9 @@ namespace MariaSchillstrom_Assigment2.Interfaces
 {
     internal class IDrivable
     {
-    }
+        string Drive { get; set; }
+        
+      
 }
+}
+    

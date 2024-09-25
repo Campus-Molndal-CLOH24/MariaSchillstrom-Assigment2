@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace MariaSchillstrom_Assigment2.Interfaces
 {
-    internal class ICar
-    {
+    internal class ICar : IVehicle, IDrivable
+    { 
+        int Doors { get; set; }
+    }      
+          
+    
     }
-}
+

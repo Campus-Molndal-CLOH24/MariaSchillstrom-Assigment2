@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace MariaSchillstrom_Assigment2.Interfaces
 {
-    internal class IMotorcycle
+    internal class IMotorcycle : IVehicle
+
     {
+            string EngineType { get; set; }
     }
 }

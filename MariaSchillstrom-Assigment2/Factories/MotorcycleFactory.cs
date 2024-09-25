@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace MariaSchillstrom_Assigment2.Factories
 {
-    internal class MotorcycleFactory
+    internal class MotorcycleFactory : IVehicleFactory
     {
+        
+
     }
 }

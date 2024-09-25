@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace MariaSchillstrom_Assigment2.Models
 {
-    internal class CarImpl
+    internal class CarImpl: ICar
     {
+
     }
 }
