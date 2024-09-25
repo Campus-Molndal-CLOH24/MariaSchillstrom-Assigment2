@@ -12,20 +12,14 @@ namespace MariaSchillstrom_Assigment2.Interfaces
         string Model { get; set; }
         int Year { get; set; }
         double mileage { get; set; }
-        
-                
-        public bool IsEngineOn => EngineOn;
 
-        bool EngineOn { get; set; }
-
-        public void StartEngine()
-        {
-            EngineOn = true;
-        }
-        public void StopEngine()
-        {
-            EngineOn = false;
-        }
+        bool IsEngineOn();  
+        void StartEngine();
+        void StopEngine();
 
     }
 }
+
+
+
+

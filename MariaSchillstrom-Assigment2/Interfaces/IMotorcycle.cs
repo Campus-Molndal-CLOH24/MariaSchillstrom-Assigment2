@@ -7,15 +7,16 @@ using System.Threading.Tasks;
 namespace MariaSchillstrom_Assigment2.Interfaces
 {
 
-    public interface IMotorCycle : IVehicle, IDriveable
+    public interface IMotorCycle : IVehicle, IDrivable
     {
         string EngineType { get; set; }
-        
+
     }
 
-    public interface IDriveable
-    {
-    }
 }
-    
-    
+
+
+
+
+
+

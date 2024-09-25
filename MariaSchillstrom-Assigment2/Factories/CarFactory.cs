@@ -1,26 +1,17 @@
-﻿using System;
-using MariaSchillstrom_Assigment2.Factories;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MariaSchillstrom_Assigment2.Interfaces;
-using MariaSchillstrom_Assigment2.Models;
+﻿using MariaSchillstrom_Assigment2.Interfaces;
+using MariaSchillstrom_Assignment_2.Models;
 
-namespace MariaSchillstrom_Assigment2.Factories
+public class CarFactory : IVehicleFactory
 {
-    public interface CarFactory : IVehicleFactory
+   
+    public CarImpl CreateCar(string brand, string model, int year, int mileage, string engineType, int doors)
     {
+        return new CarImpl(brand, model, year, mileage, engineType, doors);
+    }
 
-
-        public CarImpl CreateCar(string brand, string model, int year, int mileage, int doors)
-        {
-            return new CarImpl(brand, model, year, mileage, doors);
-        }
-        public IVehicle CreateVehicle(string brand, string model, int year, int mileage)
-        {
-            return CreateCar(brand, model, year, mileage, 5);
-        }
+    public IVehicle CreateVehicle(string brand, string model, int year, int mileage, string engineType)
+    {
+       
+        return (IVehicle)CreateCar(brand, model, year, mileage, engineType, 5);
     }
 }
-

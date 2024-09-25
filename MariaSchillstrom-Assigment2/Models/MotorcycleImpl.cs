@@ -8,8 +8,16 @@ using System.Threading.Tasks;
 
 namespace MariaSchillstrom_Assigment2.Models;
 
-internal class MotorcycleImpl : IMotorcycle
+public class MotorcycleImpl : IMotorcycle
 {
+    public MotorcycleImpl(string brand, string model, int year, int mileage, string engineType)
+    {
+        Brand = brand;
+        Model = model;
+        Year = year;
+        this.mileage = mileage;
+    }
+
     public int Doors { get; set; }
     public string Brand { get; set; }
     public string Model { get; set; }
@@ -30,5 +38,7 @@ internal class MotorcycleImpl : IMotorcycle
         EngineOn = false;
     }
 }
-    
 
+public interface IMotorcycle
+{
+}
