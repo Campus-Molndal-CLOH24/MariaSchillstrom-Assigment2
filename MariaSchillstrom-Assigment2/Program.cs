@@ -1,6 +1,5 @@
 ﻿using MariaSchillstrom_Assigment2.Factories;
 using MariaSchillstrom_Assigment2.Models;
-using Se.Dsve.Factories; 
 using System;
 
 namespace MariaSchillstrom_Assigment2
@@ -11,7 +10,7 @@ namespace MariaSchillstrom_Assigment2
         {
             // Instansiera fabriker för att skapa specifika fordon
             CarFactory carFactory = new CarFactory();
-            MotorcycleFactory motorcycleFactory = new MotorcycleFactory();
+            CarFactory motorcycleFactory = new CarFactory();
 
             
             CarImpl car = carFactory.CreateCar("Toyota", "Corolla", 2020, 15000, 4);

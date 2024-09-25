@@ -1,4 +1,4 @@
-﻿using System;
+﻿using MariaSchillstrom_Assigment2.Interfaces;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,9 +6,16 @@ using System.Threading.Tasks;
 
 namespace MariaSchillstrom_Assigment2.Interfaces
 {
-    internal class IMotorcycle : IVehicle
 
+    public interface IMotorCycle : IVehicle, IDriveable
     {
-            string EngineType { get; set; }
+        string EngineType { get; set; }
+        
+    }
+
+    public interface IDriveable
+    {
     }
 }
+    
+    

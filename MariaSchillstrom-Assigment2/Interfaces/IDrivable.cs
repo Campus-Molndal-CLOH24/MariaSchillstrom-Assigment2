@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MariaSchillstrom_Assigment2.Interfaces
 {
-    internal class IDrivable
+    public interface IDrivable
     {
         string Drive { get; set; }
         

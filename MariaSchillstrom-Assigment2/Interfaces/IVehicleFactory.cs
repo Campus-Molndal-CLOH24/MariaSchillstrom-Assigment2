@@ -1,14 +1,14 @@
-﻿using MariaSchillstrom_Assigment2.Factories;
+﻿using MariaSchillstrom_Assigment2.Interfaces;
+using MariaSchillstrom_Assigment2.Models;
+using System.Collections;
 
 namespace MariaSchillstrom_Assigment2.Interfaces
 {
-    internal class IVehicleFactory
+    public interface IVehicleFactory
     {
-        string brand { get; set; }
-        string model { get; set; }
-        int year { get; set; }
-        double mileage { get; set; }
-        
-
+        CarImpl CreateCar(string brand, string model, int year, int mileage, int doors);
+        IVehicle CreateVehicle(string brand, string model, int year, int mileage, string engineType);
     }
 }
+
+    

@@ -1,14 +1,26 @@
-﻿using MariaSchillstrom_Assigment2.Interfaces;
-using System;
+﻿using System;
+using MariaSchillstrom_Assigment2.Factories;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using MariaSchillstrom_Assigment2.Interfaces;
+using MariaSchillstrom_Assigment2.Models;
 
 namespace MariaSchillstrom_Assigment2.Factories
 {
-    public class CarFactory : IVehicleFactory
+    public interface CarFactory : IVehicleFactory
     {
-        public Interfaces.IVehicle
+
+
+        public CarImpl CreateCar(string brand, string model, int year, int mileage, int doors)
+        {
+            return new CarImpl(brand, model, year, mileage, doors);
+        }
+        public IVehicle CreateVehicle(string brand, string model, int year, int mileage)
+        {
+            return CreateCar(brand, model, year, mileage, 5);
+        }
+    }
 }
+

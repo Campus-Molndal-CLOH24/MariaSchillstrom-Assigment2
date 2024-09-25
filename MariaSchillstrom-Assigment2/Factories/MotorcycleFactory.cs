@@ -1,14 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MariaSchillstrom_Assigment2.Interfaces;
+using MariaSchillstrom_Assigment2.Models;
 
-namespace MariaSchillstrom_Assigment2.Factories
-{
-    internal class MotorcycleFactory : IVehicleFactory
+
+
+    public interface IMotorCycle : IVehicle, IDriveable
     {
+        string EngineType { get; set; }
         
-
     }
-}
+
+
+
