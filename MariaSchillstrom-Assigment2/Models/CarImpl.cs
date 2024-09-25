@@ -10,26 +10,6 @@ namespace MariaSchillstrom_Assigment2.Models
 {
     internal class CarImpl : IMotorcycle
     {
-        public CarImpl(string brand, string model, int year, int mileage)
-        {
-            Brand = brand;
-            Model = model;
-            Year = year;
-            this.mileage = mileage;
-        }
-
-        public CarImpl(string brand, string model, int year, int mileage, int doors) : this(brand, model, year, mileage)
-        {
-        }
-
-        public CarImpl(string brand, string model, int year, int mileage, string engineType, bool hasSidecar)
-        {
-            Brand = brand;
-            Model = model;
-            Year = year;
-            this.mileage = mileage;
-        }
-
         public int Doors { get; set; }
         public string Brand { get; set; }
         public string Model { get; set; }
