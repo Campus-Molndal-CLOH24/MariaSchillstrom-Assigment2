@@ -1,37 +1,53 @@
-﻿using MariaSchillstrom_Assigment2.Interfaces;
-using MariaSchillstrom_Assigment2.Models;
+﻿using MariaSchillstrom_Assigment2.Models;
 using MariaSchillstrom_Assigment2.Factories;
+using MariaSchillstrom_Assigment2.Interfaces;
+using MariaSchillstrom_Assignment_2.InterFaces;
+using System.Reflection;
 
-namespace MariaSchillstrom_Assigment2
+
+    class Program
 {
-    public class Program
+    private static void Main()
     {
-        public static void Main(string[] args)
+        List<IVehicle> vehicles = new List<IVehicle>();
+        List<IDrivable> vehicleList = new List<IDrivable>();
+
+        var carFactory = new CarFactory();
+        var motorcycleFactory = new MotorcycleFactory();
+        
+
+        IVehicle car1 = carFactory.CreateVehicle("Volvo", "V70", 2010, 10000);
+        IVehicle car2 = carFactory.CreateVehicle("Saab", "900", 1995, 20000);
+        IVehicle car3 = carFactory.CreateVehicle("Audi", "A4", 2018, 5000);
+
+        IVehicle motorcycle1 = motorcycleFactory.CreateVehicle("Yamaha", "R1", 2015, 5000);
+        IVehicle motorcycle2 = motorcycleFactory.CreateVehicle("Honda", "CBR", 2010, 10000);
+        IVehicle motorcycle3 = motorcycleFactory.CreateVehicle("Kawasaki", "Ninja", 2018, 2000);
+
+
+
+
+        vehicles.Add(car1);
+        vehicles.Add(car2);
+        vehicles.Add(car3);
+        vehicles.Add(motorcycle1);
+        vehicles.Add(motorcycle2);
+        vehicles.Add(motorcycle3);
+
+        // Gå igenom varje fordon i listan och hantera bil och motorcykel specifikt
+        foreach (IVehicle vehicle in vehicles)
         {
-            // Instansiera fabriker för att skapa specifika fordon
-            CarFactory carFactory = new CarFactory();
-            MotorcycleFactory motorcycleFactory = new MotorcycleFactory();
+            // Starta motorn för alla fordo
+            // 
+            vehicle.StartEngine();
 
-            CarImpl car = carFactory.CreateCar("Toyota", "Corolla", 2020, 15000, 4);
-            Console.WriteLine(car.ToString()); // Skriver ut bilens egenskaper
-            car.StartEngine(); // Startar bilens motor
-            Console.WriteLine("Car engine status: " + (car.IsEngineOn() ? "On" : "Off")); // Kollar om motorn är på
-            car.StopEngine(); // Stänger av bilens motor
-            Console.WriteLine("Car engine status: " + (car.IsEngineOn() ? "On" : "Off"));
-            Console.WriteLine("Car doors: " + car.Doors); // Skriver ut antalet dörrar
-            car.Doors = 5; // Ändrar antal dörrar
-            Console.WriteLine("Car doors: " + car.Doors);
+            
+    {
+        
+    }
 
-            // Skapa en motorcykel med hjälp av MotorcycleFactory
-            MotorcycleImpl motorcycle = motorcycleFactory.CreateMotorcycle("Harley Davidson", "Sportster", 2019, 5000, "V-Twin");
-            Console.WriteLine(motorcycle.ToString()); // Skriver ut motorcykelns egenskaper
-            motorcycle.StartEngine(); // Startar motorcykelns motor
-            Console.WriteLine("Motorcycle engine status: " + (motorcycle.IsEngineOn() ? "On" : "Off")); // Kollar om motorn är på
-            motorcycle.StopEngine(); // Stänger av motorcykelns motor
-            Console.WriteLine("Motorcycle engine status: " + (motorcycle.IsEngineOn() ? "On" : "Off"));
-            Console.WriteLine("Motorcycle engine type: " + motorcycle.EngineType); // Skriver ut motortypen
-            motorcycle.EngineType = "Inline-4"; // Ändrar motortypen
-            Console.WriteLine("Motorcycle engine type: " + motorcycle.EngineType);
-        }
+
+
+}
     }
 }
