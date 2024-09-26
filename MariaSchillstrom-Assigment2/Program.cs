@@ -18,12 +18,17 @@ foreach (var vehicle in vehicles)
 {
     Console.WriteLine(vehicle.ToString());
 
-    if (vehicle is ICar)
+    if (vehicle is IVehicle )
     {
-        Console.WriteLine("This vehicle has doors");
+        Console.WriteLine("This vehicle has doors");//skriver ut att fordonet har dörrar
     }
-    if (vehicle is IMotorCycle)
+    if (vehicle is IVehicle)
     {
         Console.WriteLine("This vehicle has cylinders");
     }
+    vehicle.StartEngine();
+    Console.WriteLine($"Engine started for {vehicle.Brand} {vehicle.Model}.");//valde att skriva ut brand och model för att det ska vara tydligt vilken bil som startar
+
+    vehicle.StopEngine();
+    Console.WriteLine($"Engine stopped for {vehicle.Brand} {vehicle.Model}.");//valde att skriva ut brand och model för att det ska vara tydligt vilken bil som stannar
 }
