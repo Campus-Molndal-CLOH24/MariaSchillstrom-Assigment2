@@ -13,14 +13,12 @@ public class MotorcycleFactory : IVehicleFactory
     {
         return CreateMotorcycle(brand, model, year, mileage, engineType);
     }
-
-    public IVehicle CreateVehicle(string brand, string model, int year, double mileage)
-    {
-        throw new NotImplementedException();
-    }
 }
 
-   
+
+
+
+
 
 
 
