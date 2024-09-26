@@ -14,4 +14,16 @@ vehicles.Add(new MotorcycleImpl("Yamaha", "R18", 2006, 185000, "Inline-6"));
 vehicles.Add(new CarImpl("Ford", "Mustang", 1985, 15800, 5));
 vehicles.Add(new MotorcycleImpl("Kawasaki", "Ninja", 2022, 250, "Inline-5"));
 
+foreach (var vehicle in vehicles)
+{
+    Console.WriteLine(vehicle.ToString());
 
+    if (vehicle is ICar)
+    {
+        Console.WriteLine("This vehicle has doors");
+    }
+    if (vehicle is IMotorCycle)
+    {
+        Console.WriteLine("This vehicle has cylinders");
+    }
+}

@@ -43,6 +43,11 @@ namespace MariaSchillstrom_Assigment2.Models
         {
             return $"Car: {Brand} {Model}, Year: {Year}, Mileage: {Mileage}, Doors: {Doors}, Engine On: {IsEngineOn}";
         }
+
+        public void startEngine()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
 

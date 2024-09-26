@@ -43,5 +43,10 @@ namespace MariaSchillstrom_Assigment2.Models
         {
             return $"Motorcycle: {Brand} {Model}, Year: {Year}, Mileage: {Mileage}, EngineType: {EngineType}";
         }
+
+        public void startEngine()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
