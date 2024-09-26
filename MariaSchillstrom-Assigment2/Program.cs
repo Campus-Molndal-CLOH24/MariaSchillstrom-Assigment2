@@ -16,19 +16,27 @@ vehicles.Add(new MotorcycleImpl("Kawasaki", "Ninja", 2022, 250, "Inline-5"));
 
 foreach (var vehicle in vehicles)
 {
-    Console.WriteLine(vehicle.ToString());
-
-    if (vehicle is IVehicle )
+    if (vehicle is CarImpl car)
     {
-        Console.WriteLine("This vehicle has doors");//skriver ut att fordonet har dörrar
+        //ville få tom rad mellan varje fordon så valde denna lösning
+        Console.WriteLine($"Car: {car.Brand} {car.Model}, Year: {car.Year}, Mileage: {car.Mileage}, Doors: {car.Doors}, Engine On: {car.IsEngineOn}");
+        Console.WriteLine("This vehicle has doors");
+        car.StartEngine();
+        Console.WriteLine("Engine started for CarImpl.");
+        car.StopEngine();
+        Console.WriteLine("Engine stopped for CarImpl.");
     }
-    if (vehicle is IVehicle)
+    else if (vehicle is MotorcycleImpl motorcycle)
     {
+        //ville få tom rad mellan varje fordon så valde denna lösning
+        Console.WriteLine($"Motorcycle: {motorcycle.Brand} {motorcycle.Model}, Year: {motorcycle.Year}, Mileage: {motorcycle.Mileage}, EngineType: {motorcycle.EngineType}");
         Console.WriteLine("This vehicle has cylinders");
+        motorcycle.StartEngine();
+        Console.WriteLine($"Engine started for {vehicle.Brand} {vehicle.Model}.");
+        motorcycle.StopEngine();
+        Console.WriteLine($"Engine stopped for {vehicle.Brand} {vehicle.Model}.");
     }
-    vehicle.StartEngine();
-    Console.WriteLine($"Engine started for {vehicle.Brand} {vehicle.Model}.");//valde att skriva ut brand och model för att det ska vara tydligt vilken bil som startar
 
-    vehicle.StopEngine();
-    Console.WriteLine($"Engine stopped for {vehicle.Brand} {vehicle.Model}.");//valde att skriva ut brand och model för att det ska vara tydligt vilken bil som stannar
+    
+    Console.WriteLine();//ger en tom rad mellan varje fordon
 }
