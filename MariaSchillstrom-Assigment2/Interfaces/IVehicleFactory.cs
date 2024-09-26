@@ -2,15 +2,13 @@
 
 namespace MariaSchillstrom_Assigment2.Interfaces
 {
-   
-        namespace MariaSchillstrom_Assigment2.Interfaces
+    
+    public interface IVehicleFactory
     {
-        public interface IVehicleFactory
-        {
-            IVehicle CreateVehicle(string brand, string model, int year, double mileage);
-           
-        }
+        IVehicle CreateVehicle(string brand, string model, int year, double mileage);
+        
     }
-
 }
+
+
 

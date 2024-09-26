@@ -1,6 +1,6 @@
 ﻿using MariaSchillstrom_Assigment2.Interfaces;
 using MariaSchillstrom_Assigment2.Models;
-using System;
+using MariaSchillstrom_Assigment2.Factories;
 
 namespace MariaSchillstrom_Assigment2
 {
@@ -10,9 +10,8 @@ namespace MariaSchillstrom_Assigment2
         {
             // Instansiera fabriker för att skapa specifika fordon
             CarFactory carFactory = new CarFactory();
-            CarFactory motorcycleFactory = new CarFactory();
+            MotorcycleFactory motorcycleFactory = new MotorcycleFactory();
 
-            
             CarImpl car = carFactory.CreateCar("Toyota", "Corolla", 2020, 15000, 4);
             Console.WriteLine(car.ToString()); // Skriver ut bilens egenskaper
             car.StartEngine(); // Startar bilens motor
