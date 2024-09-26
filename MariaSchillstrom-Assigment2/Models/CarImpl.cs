@@ -1,20 +1,20 @@
-﻿using MariaSchillstrom_Assignment_2.InterFaces;
+﻿using MariaSchillstrom_Assigment2.Interfaces;
+using MariaSchillstrom_Assignment_2.InterFaces;
+
 using System;
 
 namespace MariaSchillstrom_Assignment_2.Models
 {
     public class CarImpl : ICar
     {
+        // Implementera egenskaper från IVehicle
         public string Brand { get; set; } = string.Empty;
         public string Model { get; set; } = string.Empty;
         public int Year { get; set; }
-
-        // Mileage kommer från IVehicle
-        public double Mileage { get; set; }
+        public double Mileage { get; set; } // Använd "mileage" här istället för "Mileage".
 
         // Implementera Doors från ICar
         private int doors;
-
         public int Doors
         {
             get => doors;
@@ -31,18 +31,29 @@ namespace MariaSchillstrom_Assignment_2.Models
             }
         }
 
+        bool IVehicle.IsEngineOn => throw new NotImplementedException();
+
         private bool engineOn = false;
 
+        // Constructor
         public CarImpl(string brand, string model, int year, double mileage, int doors)
         {
             Brand = brand;
             Model = model;
             Year = year;
             Mileage = mileage;
-            Doors = doors;  // Sätt Doors från ICar
+            Doors = doors;  // Sätta Doors från ICar
         }
 
         public CarImpl() { }
+
+        public CarImpl(string brand, string model, int year, int mileage)
+        {
+            Brand = brand;
+            Model = model;
+            Year = year;
+            Mileage = mileage;
+        }
 
         // Implementera metoder från IDrivable
         public bool IsEngineOn()
@@ -88,3 +99,4 @@ namespace MariaSchillstrom_Assignment_2.Models
         }
     }
 }
+

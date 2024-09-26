@@ -1,25 +1,24 @@
 ﻿using MariaSchillstrom_Assigment2.Interfaces;
+using MariaSchillstrom_Assigment2.Models;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MariaSchillstrom_Assigment2.Interfaces
-{
-        public interface IVehicle
+
+    namespace MariaSchillstrom_Assigment2.Interfaces
     {
-        string Brand { get; set; }
-        string Model { get; set; }
-        int Year { get; set; }
-        double mileage { get; set; }
+        public interface IVehicle
+        {
+            string Brand { get; }
+            string Model { get; }
+            int Year { get; }
+            double Mileage { get; }
+            bool IsEngineOn { get; }
 
-        bool IsEngineOn();  
-        void StartEngine();
-        void StopEngine();
-
+            void StartEngine();
+            void StopEngine();
+        }
     }
-}
-
-
 
 

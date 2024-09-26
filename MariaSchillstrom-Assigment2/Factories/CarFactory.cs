@@ -1,17 +1,22 @@
 ﻿using MariaSchillstrom_Assigment2.Interfaces;
+using MariaSchillstrom_Assigment2.Interfaces.MariaSchillstrom_Assigment2.Interfaces;
+using MariaSchillstrom_Assigment2.Models;
 using MariaSchillstrom_Assignment_2.Models;
 
 public class CarFactory : IVehicleFactory
 {
-   
-    public CarImpl CreateCar(string brand, string model, int year, int mileage, string engineType, int doors)
+    public CarImpl CreateCar(string brand, string model, int year, double mileage, int doors)
     {
-        return new CarImpl(brand, model, year, mileage, engineType, doors);
+        return new CarImpl(brand, model, year, mileage, doors);
     }
 
-    public IVehicle CreateVehicle(string brand, string model, int year, int mileage, string engineType)
+    public IVehicle CreateVehicle(string brand, string model, int year, double mileage, int doors)
     {
-       
-        return (IVehicle)CreateCar(brand, model, year, mileage, engineType, 5);
+        return CreateCar(brand, model, year, mileage, doors);
+    }
+
+    public IVehicle CreateVehicle(string brand, string model, int year, double mileage)
+    {
+        throw new NotImplementedException();
     }
 }
