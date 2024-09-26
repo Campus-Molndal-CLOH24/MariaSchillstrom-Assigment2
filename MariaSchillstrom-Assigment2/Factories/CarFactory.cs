@@ -10,10 +10,7 @@ public class CarFactory : IVehicleFactory
         return new CarImpl(brand, model, year, mileage, doors);
     }
 
-    public MotorcycleImpl CreateMotorcycle(string brand, string model, int year, double mileage, string engineType)
-    {
-        return new MotorcycleImpl(brand, model, year, mileage, engineType);
-    }
+   
 
     public IVehicle CreateVehicle(string brand, string model, int year, double mileage)
     {
