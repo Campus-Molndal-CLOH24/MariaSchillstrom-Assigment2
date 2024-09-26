@@ -9,9 +9,14 @@ public class MotorcycleFactory : IVehicleFactory
         return new MotorcycleImpl(brand, model, year, mileage, engineType);
     }
 
+    public IVehicle CreateVehicle(string brand, string model, int year, double mileage, string engineType)
+    {
+        return CreateMotorcycle(brand, model, year, mileage, engineType);
+    }
+
     public IVehicle CreateVehicle(string brand, string model, int year, double mileage)
     {
-        throw new NotImplementedException();//enbart för nya motorcyklar
-
+        throw new NotImplementedException();
     }
 }
+
