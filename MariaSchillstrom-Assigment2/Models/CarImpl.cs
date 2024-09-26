@@ -10,8 +10,6 @@ namespace MariaSchillstrom_Assigment2.Models
         public double Mileage { get; set; }
         public int Doors { get; set; } // Antal dörrar
 
-        bool IVehicle.IsEngineOn => throw new NotImplementedException();
-
         private bool isEngineOn; // Variabel för att hålla reda på motorstatus
 
         // Konstruktor
@@ -25,6 +23,9 @@ namespace MariaSchillstrom_Assigment2.Models
             isEngineOn = false; // Motor är avstängd initialt
         }
 
+        // Implementerar IsEngineOn som en property
+        public bool IsEngineOn => isEngineOn;
+
         // Metod för att starta motorn
         public void StartEngine()
         {
@@ -37,16 +38,10 @@ namespace MariaSchillstrom_Assigment2.Models
             isEngineOn = false; // Motor är av
         }
 
-        // Metod för att kolla motorstatus
-        public bool IsEngineOn() // Detta är nu en metod
-        {
-            return isEngineOn; // Returnerar om motorn är på eller av
-        }
-
         // Överskriven ToString-metod
         public override string ToString()
         {
-            return $"Car: {Brand} {Model}, Year: {Year}, Mileage: {Mileage}, Doors: {Doors}";
+            return $"Car: {Brand} {Model}, Year: {Year}, Mileage: {Mileage}, Doors: {Doors}, Engine On: {IsEngineOn}";
         }
     }
 }
