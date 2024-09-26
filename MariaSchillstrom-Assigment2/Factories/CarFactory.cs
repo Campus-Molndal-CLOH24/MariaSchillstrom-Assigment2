@@ -1,7 +1,7 @@
 ﻿using MariaSchillstrom_Assigment2.Interfaces;
 using MariaSchillstrom_Assigment2.Interfaces.MariaSchillstrom_Assigment2.Interfaces;
 using MariaSchillstrom_Assigment2.Models;
-using MariaSchillstrom_Assignment_2.Models;
+
 
 public class CarFactory : IVehicleFactory
 {
@@ -10,13 +10,13 @@ public class CarFactory : IVehicleFactory
         return new CarImpl(brand, model, year, mileage, doors);
     }
 
-    public IVehicle CreateVehicle(string brand, string model, int year, double mileage, int doors)
+    public MotorcycleImpl CreateMotorcycle(string brand, string model, int year, double mileage, string engineType)
     {
-        return CreateCar(brand, model, year, mileage, doors);
+        return new MotorcycleImpl(brand, model, year, mileage, engineType);
     }
 
     public IVehicle CreateVehicle(string brand, string model, int year, double mileage)
     {
-        throw new NotImplementedException();
+        return CreateCar(brand, model, year, mileage, 4); // Antag att 4 dörrar som standard
     }
 }

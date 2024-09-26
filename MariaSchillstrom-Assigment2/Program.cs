@@ -1,4 +1,4 @@
-﻿using MariaSchillstrom_Assigment2.Factories;
+﻿using MariaSchillstrom_Assigment2.Interfaces;
 using MariaSchillstrom_Assigment2.Models;
 using System;
 

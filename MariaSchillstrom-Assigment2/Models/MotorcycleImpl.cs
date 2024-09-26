@@ -4,38 +4,49 @@ namespace MariaSchillstrom_Assigment2.Models
 {
     public class MotorcycleImpl : IVehicle
     {
+        public string Brand { get; set; }
+        public string Model { get; set; }
+        public int Year { get; set; }
+        public double Mileage { get; set; }
+        public string EngineType { get; set; } // Motortyp
+
+        bool IVehicle.IsEngineOn => throw new NotImplementedException();
+
+        private bool isEngineOn; // Variabel för att hålla reda på motorstatus
+
+        // Konstruktor
         public MotorcycleImpl(string brand, string model, int year, double mileage, string engineType)
         {
             Brand = brand;
             Model = model;
             Year = year;
             Mileage = mileage;
-            EngineType = engineType; // Behåll denna om engineType behövs
-            EngineOn = false; // Initialisera motorn som av
+            EngineType = engineType;
+            isEngineOn = false; // Motor är avstängd initialt
         }
 
-        public string Brand { get; private set; }
-        public string Model { get; private set; }
-        public int Year { get; private set; }
-        public double Mileage { get; private set; }
-        public bool EngineOn { get; private set; }
-        public string EngineType { get; private set; } // Behåll denna om engineType behövs
-
-        public bool IsEngineOn => EngineOn;
-
+        // Metod för att starta motorn
         public void StartEngine()
         {
-            EngineOn = true;
+            isEngineOn = true; // Motor är på
         }
 
+        // Metod för att stänga av motorn
         public void StopEngine()
         {
-            EngineOn = false;
+            isEngineOn = false; // Motor är av
         }
 
+        // Metod för att kolla motorstatus
+        public bool IsEngineOn() // Detta är nu en metod
+        {
+            return isEngineOn; // Returnerar om motorn är på eller av
+        }
+
+        // Överskriven ToString-metod
         public override string ToString()
         {
-            return $"{Brand} {Model} ({Year}) - Mileage: {Mileage} - Engine Type: {EngineType}";
+            return $"Motorcycle: {Brand} {Model}, Year: {Year}, Mileage: {Mileage}, EngineType: {EngineType}";
         }
     }
 }

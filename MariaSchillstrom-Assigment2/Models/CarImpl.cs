@@ -1,101 +1,52 @@
 ﻿using MariaSchillstrom_Assigment2.Interfaces;
-using MariaSchillstrom_Assignment_2.InterFaces;
 
-using System;
-
-namespace MariaSchillstrom_Assignment_2.Models
+namespace MariaSchillstrom_Assigment2.Models
 {
-    public class CarImpl : ICar
+    public class CarImpl : IVehicle
     {
-        // Implementera egenskaper från IVehicle
-        public string Brand { get; set; } = string.Empty;
-        public string Model { get; set; } = string.Empty;
+        public string Brand { get; set; }
+        public string Model { get; set; }
         public int Year { get; set; }
-        public double Mileage { get; set; } // Använd "mileage" här istället för "Mileage".
-
-        // Implementera Doors från ICar
-        private int doors;
-        public int Doors
-        {
-            get => doors;
-            set
-            {
-                if (value >= 2 && value <= 5)
-                {
-                    doors = value;
-                }
-                else
-                {
-                    Console.WriteLine("Antalet dörrar måste vara mellan 2 och 5.");
-                }
-            }
-        }
+        public double Mileage { get; set; }
+        public int Doors { get; set; } // Antal dörrar
 
         bool IVehicle.IsEngineOn => throw new NotImplementedException();
 
-        private bool engineOn = false;
+        private bool isEngineOn; // Variabel för att hålla reda på motorstatus
 
-        // Constructor
+        // Konstruktor
         public CarImpl(string brand, string model, int year, double mileage, int doors)
         {
             Brand = brand;
             Model = model;
             Year = year;
             Mileage = mileage;
-            Doors = doors;  // Sätta Doors från ICar
+            Doors = doors;
+            isEngineOn = false; // Motor är avstängd initialt
         }
 
-        public CarImpl() { }
-
-        public CarImpl(string brand, string model, int year, int mileage)
-        {
-            Brand = brand;
-            Model = model;
-            Year = year;
-            Mileage = mileage;
-        }
-
-        // Implementera metoder från IDrivable
-        public bool IsEngineOn()
-        {
-            return engineOn;
-        }
-
+        // Metod för att starta motorn
         public void StartEngine()
         {
-            if (!engineOn)
-            {
-                engineOn = true;
-                Console.WriteLine("The engine started!");
-            }
+            isEngineOn = true; // Motor är på
         }
 
+        // Metod för att stänga av motorn
         public void StopEngine()
         {
-            if (engineOn)
-            {
-                engineOn = false;
-                Console.WriteLine("The engine stopped.");
-            }
+            isEngineOn = false; // Motor är av
         }
 
-        public string Drive()
+        // Metod för att kolla motorstatus
+        public bool IsEngineOn() // Detta är nu en metod
         {
-            if (engineOn)
-            {
-                Console.WriteLine("The car is driving.");
-                return "The car is driving.";
-            }
-            else
-            {
-                Console.WriteLine("The engine is not on.");
-                return "The engine is not on.";
-            }
+            return isEngineOn; // Returnerar om motorn är på eller av
         }
 
+        // Överskriven ToString-metod
         public override string ToString()
         {
-            return $"{Brand} {Model} {Year}";
+            return $"Car: {Brand} {Model}, Year: {Year}, Mileage: {Mileage}, Doors: {Doors}";
         }
     }
 }
