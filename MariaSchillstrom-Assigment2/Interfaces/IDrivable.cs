@@ -8,7 +8,7 @@ namespace MariaSchillstrom_Assigment2.Interfaces
 {
     public interface IDrivable
     {
-        string Drive();
+        string Drive();//Specifik egenskap för bilen
     }
 
 }

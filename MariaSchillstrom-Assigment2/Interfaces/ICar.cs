@@ -10,7 +10,7 @@ namespace MariaSchillstrom_Assignment_2.InterFaces
 
     public interface ICar : IVehicle, IDrivable
     {
-        int Doors { get; set; }
+        int Doors { get; set; }//specifik egenskap för bilen
     }
 }
 

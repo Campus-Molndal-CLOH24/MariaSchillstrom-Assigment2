@@ -2,13 +2,13 @@
 
 namespace MariaSchillstrom_Assigment2.Models
 {
-    public class CarImpl : IVehicle
+    public class CarImpl : IVehicle// 
     {
         public string Brand { get; set; }
         public string Model { get; set; }
         public int Year { get; set; }
         public double Mileage { get; set; }
-        public int Doors { get; set; } // Antal dörrar
+        public int Doors { get; set; } 
 
         private bool isEngineOn; // Variabel för att hålla reda på motorstatus
 
@@ -20,11 +20,11 @@ namespace MariaSchillstrom_Assigment2.Models
             Year = year;
             Mileage = mileage;
             Doors = doors;
-            isEngineOn = false; // Motor är avstängd initialt
+            isEngineOn = false; // Motor är avstängd till en början
         }
 
-        // Implementerar IsEngineOn som en property
-        public bool IsEngineOn => isEngineOn;
+        // Implementerar IsEngineOn som en egenskap
+        public bool IsEngineOn => isEngineOn;// true or false
 
         // Metod för att starta motorn
         public void StartEngine()
@@ -38,13 +38,13 @@ namespace MariaSchillstrom_Assigment2.Models
             isEngineOn = false; // Motor är av
         }
 
-        // Överskriven ToString-metod
-        public override string ToString()
+        
+        public override string ToString()// Skriver ut information om bilen i textsträng
         {
             return $"Car: {Brand} {Model}, Year: {Year}, Mileage: {Mileage}, Doors: {Doors}, Engine On: {IsEngineOn}";
         }
 
-        // Explicit implementation of the startEngine() method from IVehicle
+        
         void IVehicle.startEngine()
         {
             StartEngine();

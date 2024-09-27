@@ -2,17 +2,18 @@
 
 namespace MariaSchillstrom_Assigment2.Models
 {
-    public class MotorcycleImpl : IVehicle
+    public class MotorcycleImpl : IVehicle 
     {
+        // se kommentarer för CarImpl för mer detaljer
         public string Brand { get; set; }
         public string Model { get; set; }
         public int Year { get; set; }
         public double Mileage { get; set; }
-        public string EngineType { get; set; } // Motortyp
+        public string EngineType { get; set; } // Motortyp specifik för motorcyklar
 
-        private bool isEngineOn; // Variabel för att hålla reda på motorstatus
+        private bool isEngineOn; 
 
-        // Konstruktor
+        
         public MotorcycleImpl(string brand, string model, int year, double mileage, string engineType)
         {
             Brand = brand;
@@ -20,25 +21,25 @@ namespace MariaSchillstrom_Assigment2.Models
             Year = year;
             Mileage = mileage;
             EngineType = engineType;
-            isEngineOn = false; // Motor är avstängd initialt
+            isEngineOn = false; 
         }
 
-        // Implementerar IsEngineOn som en property
-        public bool IsEngineOn => isEngineOn;
+        
+        public bool IsEngineOn => isEngineOn;//
 
-        // Metod för att starta motorn
+        
         public void StartEngine()
         {
-            isEngineOn = true; // Motor är på
+            isEngineOn = true; 
         }
 
-        // Metod för att stänga av motorn
+        
         public void StopEngine()
         {
-            isEngineOn = false; // Motor är av
+            isEngineOn = false; 
         }
 
-        // Överskriven ToString-metod
+        
         public override string ToString()
         {
             return $"Motorcycle: {Brand} {Model}, Year: {Year}, Mileage: {Mileage}, EngineType: {EngineType}";

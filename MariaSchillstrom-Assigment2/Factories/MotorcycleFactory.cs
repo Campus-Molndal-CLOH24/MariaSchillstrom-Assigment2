@@ -6,7 +6,7 @@ namespace MariaSchillstrom_Assigment2.Factories
 {
     public class MotorcycleFactory : IVehicleFactory
     {
-        public MotorcycleImpl CreateMotorcycle(string brand, string model, int year, double mileage, string engineType)
+        public MotorcycleImpl CreateMotorcycle(string brand, string model, int year, double mileage, string engineType)//Se CarFactory för kommentarer
         {
             return new MotorcycleImpl(brand, model, year, mileage, engineType);
 

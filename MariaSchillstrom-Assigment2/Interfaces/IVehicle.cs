@@ -8,8 +8,8 @@ using System.Threading.Tasks;
 
     namespace MariaSchillstrom_Assigment2.Interfaces
     {
-        public interface IVehicle
-        {
+        public interface IVehicle// Standardegenskaper för fordon
+    {
             string Brand { get; }
             string Model { get; }
             int Year { get; }

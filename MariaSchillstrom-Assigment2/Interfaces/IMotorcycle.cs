@@ -9,7 +9,7 @@ namespace MariaSchillstrom_Assigment2.Interfaces
 
     public interface IMotorCycle : IVehicle, IDrivable
     {
-        string EngineType { get; set; }
+        string EngineType { get; set; }//Specifik egensap för motorcykel
 
     }
 
